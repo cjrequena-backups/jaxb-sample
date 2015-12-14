@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:BookingCaseRQ xmlns:p="http://hotelbeds.com/service/domain/booking/cs/categorization" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hotelbeds.com/service/domain/booking/cs/categorization Booking.xsd ">
+  <Booking BookingId="0" BookingInbound="0">
+    <BookingCaseList>
+      <BookingCase ActionType="NEW" NumIdent="0">
+        <LifeCicleMomentType>Pre Arrival</LifeCicleMomentType>
+        <Petitioner>Petitioner</Petitioner>
+        <ServiceDetailList>
+          <ServiceDetail>
+            <ServiceId>ServiceId</ServiceId>
+            <SubrequestType>SubrequestType</SubrequestType>
+            <Detail>Detail</Detail>
+            <AlarmType>N</AlarmType>
+            <ServiceType>Accommodation</ServiceType>
+            <OMTrackerReason>OMTrackerReason</OMTrackerReason>
+            <OMTrackerSubreason>OMTrackerSubreason</OMTrackerSubreason>
+          </ServiceDetail>
+        </ServiceDetailList>
+      </BookingCase>
+    </BookingCaseList>
+  </Booking>
+</p:BookingCaseRQ>

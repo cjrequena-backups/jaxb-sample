@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pur:CustomerDetails xmlns:p="http://NamespaceTest.com/OrderTypes" xmlns:p1="http://NamespaceTest.com/CommonTypes" xmlns:p2="http://NamespaceTest.com/CustomerTypes" xmlns:pur="http://NamespaceTest.com/Purchase" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://NamespaceTest.com/Purchase Main.xsd ">
+  <p2:Name>p2:Name</p2:Name>
+  <p2:DeliveryAddress>
+    <p1:Line1>p1:Line1</p1:Line1>
+    <p1:Line2>p1:Line2</p1:Line2>
+  </p2:DeliveryAddress>
+  <p2:BillingAddress>
+    <p1:Line1>p1:Line1</p1:Line1>
+    <p1:Line2>p1:Line2</p1:Line2>
+  </p2:BillingAddress>
+</pur:CustomerDetails>
