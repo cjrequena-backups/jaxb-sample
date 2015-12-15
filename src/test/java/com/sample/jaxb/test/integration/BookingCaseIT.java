@@ -13,7 +13,7 @@ import com.sample.jaxb.domain.booking.BookingCaseRQ;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
-public class BookingCase {
+public class BookingCaseIT {
 
 	@Test
 	public void test() {

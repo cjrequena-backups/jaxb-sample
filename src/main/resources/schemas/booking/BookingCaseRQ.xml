@@ -14,6 +14,9 @@
             <ServiceType>Accommodation</ServiceType>
             <OMTrackerReason>OMTrackerReason</OMTrackerReason>
             <OMTrackerSubreason>OMTrackerSubreason</OMTrackerSubreason>
+            <CaseStatus>C</CaseStatus>
+            <BookoutOrigin>A</BookoutOrigin>
+            <AtlasUser>AtlasUser</AtlasUser>
           </ServiceDetail>
         </ServiceDetailList>
       </BookingCase>

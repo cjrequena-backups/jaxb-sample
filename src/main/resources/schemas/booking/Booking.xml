@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:BookingDetailRS xmlns:p="http://hotelbeds.com/service/domain/booking/cs/categorization" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hotelbeds.com/service/domain/booking/cs/categorization Booking.xsd ">
+  <AuditData BookingId="0" BookingInbound="0">
+    <RequestStatus>OK</RequestStatus>
+  </AuditData>
+  <p:BookingDetail>
+    <p:HeaderInf>
+      <p:GempCodEmp>p:GempCodEmp</p:GempCodEmp>
+      <p:GttoSeqTtoo>0</p:GttoSeqTtoo>
+      <p:NomCortoTtoo>p:NomCortoTtoo</p:NomCortoTtoo>
+      <p:BranchCode>0</p:BranchCode>
+      <p:BranchName>p:BranchName</p:BranchName>
+      <p:RefTtoo>p:RefTtoo</p:RefTtoo>
+      <p:FecDesde>2001-01-01</p:FecDesde>
+      <p:FintCodInterface>p:FintCodInterface</p:FintCodInterface>
+      <p:IndTipPag>M</p:IndTipPag>
+    </p:HeaderInf>
+  </p:BookingDetail>
+</p:BookingDetailRS>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<p:BookingCaseRS xmlns:p="http://hotelbeds.com/service/domain/booking/cs/categorization" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hotelbeds.com/service/domain/booking/cs/categorization Booking.xsd ">
+  <AuditData BookingId="0" BookingInbound="0">
+    <RequestStatus>OK</RequestStatus>
+  </AuditData>
+</p:BookingCaseRS>

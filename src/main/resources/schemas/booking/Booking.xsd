@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://hotelbeds.com/service/domain/booking/cs/categorization" xmlns:jxb="http://java.sun.com/xml/ns/jaxb" targetNamespace="http://hotelbeds.com/service/domain/booking/cs/categorization" jxb:version="2.0">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns="http://hotelbeds.com/service/domain/booking/cs/categorization"
+	xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+	targetNamespace="http://hotelbeds.com/service/domain/booking/cs/categorization"
+	jxb:version="2.0">
 	<xs:element name="BookingCaseRQ">
 		<xs:annotation>
-			<xs:documentation>Request for new/update/delete booking cases.</xs:documentation>
+			<xs:documentation>Request for new/update/delete booking cases.
+			</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
@@ -15,8 +20,8 @@
 										<xs:element name="BookingCase" maxOccurs="unbounded">
 											<xs:complexType>
 												<xs:sequence>
-													<xs:element name="LifeCicleMomentType" type="LifeCicleMomentType"/>
-													<xs:element name="Petitioner" type="Petitioner"/>
+													<xs:element name="LifeCicleMomentType" type="LifeCicleMomentType" />
+													<xs:element name="Petitioner" type="Petitioner" />
 													<xs:sequence>
 														<xs:element name="ServiceDetailList">
 															<xs:complexType>
@@ -24,13 +29,18 @@
 																	<xs:element name="ServiceDetail" maxOccurs="unbounded">
 																		<xs:complexType>
 																			<xs:sequence>
-																				<xs:element name="ServiceId" type="ServiceId"/>
-																				<xs:element name="SubrequestType" type="SubrequestType"/>
-																				<xs:element name="Detail" type="Detail"/>
-																				<xs:element name="AlarmType" type="AlarmType"/>
-																				<xs:element name="ServiceType" type="ServiceType"/>
-																				<xs:element name="OMTrackerReason" type="OMTrackerReason"/>
-																				<xs:element name="OMTrackerSubreason" type="OMTrackerSubreason"/>
+																				<xs:element name="ServiceId" type="ServiceId" />
+																				<xs:element name="SubrequestType" type="SubrequestType" />
+																				<xs:element name="Detail" type="Detail" />
+																				<xs:element name="AlarmType" type="AlarmType" />
+																				<xs:element name="ServiceType" type="ServiceType" />
+																				<xs:element name="OMTrackerReason" type="OMTrackerReason" />
+																				<xs:element name="OMTrackerSubreason"
+																					type="OMTrackerSubreason" />
+																				<!-- BOOKOUTS -->
+																				<xs:element name="CaseStatus" type="CaseStatus" />
+																				<xs:element name="BookoutOrigin" type="BookoutOrigin" />
+																				<xs:element name="AtlasUser" type="AtlasUser" />
 																			</xs:sequence>
 																		</xs:complexType>
 																	</xs:element>
@@ -39,16 +49,19 @@
 														</xs:element>
 													</xs:sequence>
 												</xs:sequence>
-												<xs:attribute name="NumIdent" type="xs:integer" use="required"/>
-												<xs:attribute name="ActionType" type="ActionType" use="required"/>
+												<xs:attribute name="NumIdent" type="xs:integer"
+													use="required" />
+												<xs:attribute name="ActionType" type="ActionType"
+													use="required" />
 											</xs:complexType>
 										</xs:element>
 									</xs:sequence>
 								</xs:complexType>
 							</xs:element>
 						</xs:sequence>
-						<xs:attribute name="BookingInbound" type="xs:integer" use="required"/>
-						<xs:attribute name="BookingId" type="xs:integer" use="required"/>
+						<xs:attribute name="BookingInbound" type="xs:integer"
+							use="required" />
+						<xs:attribute name="BookingId" type="xs:integer" use="required" />
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>
@@ -56,15 +69,16 @@
 	</xs:element>
 	<xs:element name="BookingCaseRS">
 		<xs:annotation>
-			<xs:documentation>Response for new/update/delete booking cases requests.</xs:documentation>
+			<xs:documentation>Response for new/update/delete booking cases
+				requests.</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="AuditData" type="AuditData"/>
+				<xs:element name="AuditData" type="AuditData" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
-		<xs:element name="BookingDetailRQ">
+	<xs:element name="BookingDetailRQ">
 		<xs:annotation>
 			<xs:documentation>Request for booking detail</xs:documentation>
 		</xs:annotation>
@@ -72,8 +86,9 @@
 			<xs:sequence>
 				<xs:element name="Booking">
 					<xs:complexType>
-						<xs:attribute name="BookingInbound" type="xs:integer" use="required"/>
-						<xs:attribute name="BookingId" type="xs:integer" use="required"/>
+						<xs:attribute name="BookingInbound" type="xs:integer"
+							use="required" />
+						<xs:attribute name="BookingId" type="xs:integer" use="required" />
 					</xs:complexType>
 				</xs:element>
 			</xs:sequence>
@@ -81,12 +96,13 @@
 	</xs:element>
 	<xs:element name="BookingDetailRS">
 		<xs:annotation>
-			<xs:documentation>Response for booking detail requests</xs:documentation>
+			<xs:documentation>Response for booking detail requests
+			</xs:documentation>
 		</xs:annotation>
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="AuditData" type="AuditData"/>
-				<xs:element ref="BookingDetail"/>
+				<xs:element name="AuditData" type="AuditData" />
+				<xs:element ref="BookingDetail" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
@@ -95,9 +111,9 @@
 			<xs:element name="RequestStatus">
 				<xs:simpleType>
 					<xs:restriction base="xs:string">
-						<xs:enumeration value="OK"/>
-						<xs:enumeration value="WARNING"/>
-						<xs:enumeration value="ERROR"/>
+						<xs:enumeration value="OK" />
+						<xs:enumeration value="WARNING" />
+						<xs:enumeration value="ERROR" />
 					</xs:restriction>
 				</xs:simpleType>
 			</xs:element>
@@ -107,244 +123,299 @@
 						<xs:element name="Message" maxOccurs="unbounded">
 							<xs:complexType>
 								<xs:sequence>
-									<xs:element name="MessageId" type="MessageId"/>
-									<xs:element name="MessageDescription" type="MessageDescription"/>
+									<xs:element name="MessageId" type="MessageId" />
+									<xs:element name="MessageDescription" type="MessageDescription" />
 								</xs:sequence>
-								<xs:attribute name="NumIdent" type="xs:integer" use="required"/>
+								<xs:attribute name="NumIdent" type="xs:integer"
+									use="required" />
 							</xs:complexType>
 						</xs:element>
 					</xs:sequence>
 				</xs:complexType>
 			</xs:element>
 		</xs:sequence>
-		<xs:attribute name="BookingInbound" type="xs:integer" use="required"/>
-		<xs:attribute name="BookingId" type="xs:integer" use="required"/>
+		<xs:attribute name="BookingInbound" type="xs:integer"
+			use="required" />
+		<xs:attribute name="BookingId" type="xs:integer" use="required" />
 	</xs:complexType>
 	<xs:simpleType name="AlarmType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="N"/>
-			<xs:enumeration value="I"/>
-			<xs:enumeration value="C"/>
+			<xs:enumeration value="N" />
+			<xs:enumeration value="I" />
+			<xs:enumeration value="C" />
+			<!-- BOOOUTS -->
+			<xs:enumeration value="P" />
+			<xs:enumeration value="B" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="OMTrackerReason">
 		<xs:restriction base="xs:string">
-			<xs:minLength value="0"/>
-			<xs:maxLength value="200"/>
+			<xs:minLength value="0" />
+			<xs:maxLength value="200" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="OMTrackerSubreason">
 		<xs:restriction base="xs:string">
-			<xs:minLength value="0"/>
-			<xs:maxLength value="200"/>
+			<xs:minLength value="0" />
+			<xs:maxLength value="200" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ServiceType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Accommodation"/>
-			<xs:enumeration value="Transfer"/>
-			<xs:enumeration value="Rent a car"/>
-			<xs:enumeration value="Excursions"/>
-			<xs:enumeration value="Tickets"/>
+			<xs:enumeration value="Accommodation" />
+			<xs:enumeration value="Transfer" />
+			<xs:enumeration value="Rent a car" />
+			<xs:enumeration value="Excursions" />
+			<xs:enumeration value="Tickets" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="LifeCicleMomentType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="Pre Arrival"/>
-			<xs:enumeration value="On Spot"/>
-			<xs:enumeration value="Post Travel"/>
+			<xs:enumeration value="Pre Arrival" />
+			<xs:enumeration value="On Spot" />
+			<xs:enumeration value="Post Travel" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Service">
 		<xs:restriction base="xs:string">
-			<xs:minLength value="1"/>
-			<xs:maxLength value="50"/>
+			<xs:minLength value="1" />
+			<xs:maxLength value="50" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Petitioner">
 		<xs:restriction base="xs:string">
-			<xs:minLength value="1"/>
-			<xs:maxLength value="50"/>
+			<xs:minLength value="1" />
+			<xs:maxLength value="50" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="RequestType">
 		<xs:restriction base="xs:string">
-			<xs:minLength value="1"/>
-			<xs:maxLength value="200"/>
+			<xs:minLength value="1" />
+			<xs:maxLength value="200" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ServiceId">
 		<xs:restriction base="xs:string">
-			<xs:minLength value="1"/>
-			<xs:maxLength value="50"/>
+			<xs:minLength value="1" />
+			<xs:maxLength value="50" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="SubrequestType">
 		<xs:restriction base="xs:string">
-			<xs:minLength value="1"/>
-			<xs:maxLength value="200"/>
+			<xs:minLength value="1" />
+			<xs:maxLength value="200" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Detail">
 		<xs:restriction base="xs:string">
-			<xs:minLength value="1"/>
-			<xs:maxLength value="500"/>
+			<xs:minLength value="1" />
+			<xs:maxLength value="500" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="MessageDescription">
 		<xs:restriction base="xs:string">
-			<xs:minLength value="0"/>
-			<xs:maxLength value="500"/>
+			<xs:minLength value="0" />
+			<xs:maxLength value="500" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="MessageId">
 		<xs:restriction base="xs:string">
-			<xs:minLength value="1"/>
-			<xs:maxLength value="10"/>
+			<xs:minLength value="1" />
+			<xs:maxLength value="10" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ErrorType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="ERROR"/>
-			<xs:enumeration value="WARNING"/>
+			<xs:enumeration value="ERROR" />
+			<xs:enumeration value="WARNING" />
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ActionType">
 		<xs:restriction base="xs:string">
-			<xs:enumeration value="NEW"/>
-			<xs:enumeration value="UPDATE"/>
-			<xs:enumeration value="DELETE"/>
+			<xs:enumeration value="NEW" />
+			<xs:enumeration value="UPDATE" />
+			<xs:enumeration value="DELETE" />
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:element name="GempCodEmp" nillable="false">
-		<xs:simpleType>
-			<xs:restriction base="xs:string">
-				<xs:maxLength value="3"/>
-				<xs:minLength value="1"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="GttoSeqTtoo">
-		<xs:simpleType>
-			<xs:restriction base="xs:integer"/>
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="NomCortoTtoo" nillable="false">
-		<xs:simpleType>
-			<xs:restriction base="xs:string">
-				<xs:maxLength value="10"/>
-				<xs:minLength value="1"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="BranchCode" nillable="true">
-		<xs:simpleType>
-			<xs:restriction base="xs:integer"/>
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="BranchName" nillable="true">
-		<xs:simpleType>
-			<xs:restriction base="xs:string">
-				<xs:maxLength value="100"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="RefTtoo" nillable="true">
-		<xs:simpleType>
-			<xs:restriction base="xs:string">
-				<xs:maxLength value="20"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="FecDesde" nillable="true">
-		<xs:simpleType>
-			<xs:restriction base="xs:date"/>
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="FintCodInterface" nillable="true">
-		<xs:simpleType>
-			<xs:restriction base="xs:string">
-				<xs:maxLength value="4"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:element>
 	<xs:element name="HeaderInf">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="GempCodEmp"/>
-				<xs:element ref="GttoSeqTtoo"/>
-				<xs:element ref="NomCortoTtoo"/>
-				<xs:element ref="BranchCode"/>
-				<xs:element ref="BranchName"/>
-				<xs:element ref="RefTtoo"/>
-				<xs:element ref="FecDesde"/>
-				<xs:element ref="FintCodInterface"/>
+				<xs:element ref="GempCodEmp" />
+				<xs:element ref="GttoSeqTtoo" />
+				<xs:element ref="NomCortoTtoo" />
+				<xs:element ref="BranchCode" />
+				<xs:element ref="BranchName" />
+				<xs:element ref="RefTtoo" />
+				<xs:element ref="FecDesde" />
+				<xs:element ref="FintCodInterface" />
+				<xs:element ref="IndTipPag" />
 			</xs:sequence>
 		</xs:complexType>
-	</xs:element>
-	<xs:element name="ServiceType" nillable="false">
-		<xs:simpleType>
-			<xs:restriction base="xs:string">
-				<xs:maxLength value="20"/>
-				<xs:minLength value="1"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="ServiceOrder" nillable="false">
-		<xs:simpleType>
-			<xs:restriction base="xs:integer"/>
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="ServiceName" nillable="false">
-		<xs:simpleType>
-			<xs:restriction base="xs:string">
-				<xs:maxLength value="100"/>
-				<xs:minLength value="1"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="SupplierName">
-		<xs:simpleType>
-			<xs:restriction base="xs:string">
-				<xs:maxLength value="35"/>
-			</xs:restriction>
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="SupplierCode">
-		<xs:simpleType>
-			<xs:restriction base="xs:integer"/>
-		</xs:simpleType>
-	</xs:element>
-	<xs:element name="HotelCode" nillable="true">
-		<xs:simpleType>
-			<xs:restriction base="xs:integer"/>
-		</xs:simpleType>
 	</xs:element>
 	<xs:element name="ServiceInf">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="ServiceType"/>
-				<xs:element ref="SupplierName"/>
-				<xs:element ref="SupplierCode"/>
-				<xs:element ref="HotelCode"/>
+				<xs:element ref="ServiceType" />
+				<xs:element ref="SupplierName" />
+				<xs:element ref="SupplierCode" />
+				<xs:element ref="HotelCode" />
+				<xs:element ref="ProvTercero" />
+				<xs:element ref="Integracion" />
+				<xs:element ref="FecDesde" />
+				<xs:element ref="FecHasta" />
 			</xs:sequence>
-			<xs:attribute name="ServiceOrder" type="xs:integer" use="required"/>
-			<xs:attribute name="ServiceName" type="xs:string" use="required"/>
+			<xs:attribute name="ServiceOrder" type="xs:integer" use="required" />
+			<xs:attribute name="ServiceName" type="xs:string" use="required" />
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="Services">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="ServiceInf" maxOccurs="unbounded"/>
+				<xs:element ref="ServiceInf" maxOccurs="unbounded" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 	<xs:element name="BookingDetail">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element ref="HeaderInf"/>
-				<xs:element ref="Services" minOccurs="0"/>
+				<xs:element ref="HeaderInf" />
+				<xs:element ref="Services" minOccurs="0" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
+
+
+	<xs:element name="GempCodEmp" nillable="false">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="3" />
+				<xs:minLength value="1" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="GttoSeqTtoo">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="NomCortoTtoo" nillable="false">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="10" />
+				<xs:minLength value="1" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="BranchCode" nillable="true">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="BranchName" nillable="true">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="100" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="RefTtoo" nillable="true">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="20" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="FecDesde" nillable="true">
+		<xs:simpleType>
+			<xs:restriction base="xs:date" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="FintCodInterface" nillable="true">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="4" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="IndTipPag" nillable="true">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="1" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+
+	<xs:element name="ServiceType" nillable="false">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="20" />
+				<xs:minLength value="1" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="ServiceOrder" nillable="false">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="ServiceName" nillable="false">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="100" />
+				<xs:minLength value="1" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="SupplierName">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:maxLength value="35" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="SupplierCode">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="HotelCode" nillable="true">
+		<xs:simpleType>
+			<xs:restriction base="xs:integer" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="ProvTercero" nillable="true">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="Integracion" nillable="true">
+		<xs:simpleType>
+			<xs:restriction base="xs:string" />
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="FecHasta" nillable="true">
+		<xs:simpleType>
+			<xs:restriction base="xs:date" />
+		</xs:simpleType>
+	</xs:element>
+
+	<!-- -->
+	<xs:simpleType name="CaseStatus">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="BookoutOrigin">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="1" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="AtlasUser">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1" />
+			<xs:maxLength value="30" />
+		</xs:restriction>
+	</xs:simpleType>
 </xs:schema>
